@@ -3,19 +3,24 @@ import Header from "./Header";
 
 function Login() {
   const [isLogin, setIsLogin] = useState(false);
-  const [fullName, setFullName] = useState("");
+  const [fullName, setFullName] = useState(""); // Correctly initialized as a string
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const loginHandler = () => {
     setIsLogin(!isLogin);
   };
+
   const getInputData = (e) => {
     e.preventDefault();
+    console.log("Full Name:", fullName, "Email:", email, "Password:", password);
+
+    // Reset form fields after submission
     setFullName("");
     setEmail("");
     setPassword("");
   };
+
   return (
     <div>
       <Header />
@@ -46,15 +51,15 @@ function Login() {
           <input
             type="email"
             placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
             value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="outline-none p-3 my-2 rounded-sm bg-gray-800 text-white"
           />
           <input
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
             className="outline-none p-3 my-2 rounded-sm bg-gray-800 text-white"
           />
           <button

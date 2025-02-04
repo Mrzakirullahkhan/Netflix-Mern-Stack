@@ -5,7 +5,7 @@ function Browse() {
   return (
     <div>
       <Header />
-      header
+     
     </div>
   );
 }
